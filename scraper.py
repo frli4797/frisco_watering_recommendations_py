@@ -10,7 +10,7 @@ html = scraperwiki.scrape("https://www.friscotexas.gov/177/Water-Resources")
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
 for p in root.cssselect("div[id='divEditor8ff1da43-be17-408c-b706-5c7ce50d9df5']"):
-  print p.text_content();
+  print p.text_content().encode('utf-8');
 #
 
 # # Write out to the sqlite database using scraperwiki library
